@@ -7,7 +7,7 @@ You will hardly hear from me: "I'm interested in doing testing", you will see it
 ## Subtask 1: Searching for selectors on the login pageList all the elements that are on the login page.
 **sign_in_button_xpath**  
 //*[text()='Sign in']  
-//*/span[@ class = 'MuiButton-label']  
+//span[@ class = 'MuiButton-label']  
 //*[@id="__next"]/form/div/div[2]/button/span[1]  
 
 **scouts_panel_xpath**  
