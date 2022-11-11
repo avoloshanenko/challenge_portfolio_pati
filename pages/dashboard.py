@@ -1,7 +1,12 @@
+import time
+
 from pages.base_page import BasePage
 
 
+
 class Dashboard(BasePage):
+   expected_title = "Scouts panel"
+   dashboard_url = "https://scouts-test.futbolkolektyw.pl/"
    header_xpath = "//header"
    side_navigation = "//*[contains(@class, 'MuiDrawer-root')]"
    section_scouts_panel = "//*[contains(@class, 'MuiGrid-spacing-xs-2')][2]/child::div[1]"
@@ -16,4 +21,7 @@ class Dashboard(BasePage):
    button_language = "//*[@ class = 'MuiList-root MuiList-padding'][2]/child::div[1]"
    button_sign_out = "//*[@ class = 'MuiList-root MuiList-padding'][2]/child::div[2]"
 
-   pass
+   def title_of_page(self):
+      time.sleep(4)
+      assert self.get_page_title(self.dashboard_url) == self.expected_title
+
