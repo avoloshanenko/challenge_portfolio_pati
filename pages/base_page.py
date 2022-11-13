@@ -17,5 +17,5 @@ class BasePage():
         self.driver.get(url)
         return self.driver.title
 
-    def assert_element_text(self, driver, xpath, expected_text):
-        self.driver()
+    #def assert_element_text(self, driver, xpath, expected_text):
+        #self.driver()
