@@ -31,9 +31,7 @@ class TestLoginPage(unittest.TestCase):
         dashboard_page.title_of_page()
         time.sleep(5)
 
-    def assert_element_text(self):
-        exepected_text = 'Scouts Panel'
 
-    @classmethod
+
     def tearDown(self):
         self.driver.quit()

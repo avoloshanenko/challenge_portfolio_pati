@@ -18,7 +18,4 @@ class BasePage():
         return self.driver.title
 
     def assert_element_text(self, driver, xpath, expected_text):
-
-        element = driver.find_element(by=By.XPATH, value=xpath)
-        element_text = element.text
-        assert expected_text == element_text
+        self.driver()
