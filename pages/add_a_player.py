@@ -29,6 +29,8 @@ class TestAddPlayer(unittest.TestCase):
 
         user_login.click_on_add_player_button()
         time.sleep(5)
+        user_login.title_of_page2()
+        time.sleep(5)
 
 
 
