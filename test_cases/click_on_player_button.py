@@ -21,19 +21,15 @@ class TestLoginPage(unittest.TestCase):
         self.driver.fullscreen_window()
         self.driver.implicitly_wait(IMPLICITLY_WAIT)
 
-    def test_log_in_to_the_system(self):
+    def test_click_on_player_button(self):
 
         user_login = LoginPage(self.driver)
         user_login.title_of_page()
         user_login.type_in_email('user07@getnada.com')
         user_login.type_in_password('Test-1234')
-
         user_login.click_on_the_sign_in_button()
-
-
-        scouts_panel_xpath = "//header/div/h6"
-        scout_panel_text = "Scouts Panel"
-        user_login.assert_element_text(self.driver, scouts_panel_xpath, scout_panel_text)
+        user_login.click_on_the_players_button()
+        user_login.title_of_page2()
 
 
 

@@ -11,14 +11,16 @@ class LoginPage(BasePage):
     scouts_panel_xpath = "//header/div/h6"
     login_url2 = "https://scouts-test.futbolkolektyw.pl/en/players/add"
     expected_title2 = "Add player"
+    button_sign_out = "//*[@ class = 'MuiList-root MuiList-padding'][2]/child::div[2]"
+    button_language = "//*[@ class = 'MuiList-root MuiList-padding'][2]/child::div[1]"
+    button_players = "//*[@ class = 'MuiList-root MuiList-padding'][1]/child::div[2]"
+
     def type_in_email(self, email):
         return self.field_send_keys(self.login_field_xpath, email)
 
     def type_in_password(self, password):
         return self.field_send_keys(self.password_field_xpath, password)
 
-    def type_in_field(self,selector, field_value):
-        return self.field_send_keys(selector, value)
 
     def click_on_the_sign_in_button(self):
         return self.click_on_the_element(self.sign_in_button_xpath)
@@ -31,4 +33,16 @@ class LoginPage(BasePage):
 
     def click_on_add_player_button(self):
         return self.click_on_the_element(self.add_player_button_xpath)
+
+    def click_on_the_sign_out_button(self):
+        return self.click_on_the_element(self.button_sign_out)
+
+    def click_on_the_language_button(self):
+        return self.click_on_the_element(self.button_language)
+
+    def click_on_the_players_button(self):
+        return self.click_on_the_element(self.button_players)
+
+
+
 

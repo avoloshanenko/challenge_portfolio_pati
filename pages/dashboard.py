@@ -20,8 +20,12 @@ class Dashboard(BasePage):
    button_players = "//*[@ class = 'MuiList-root MuiList-padding'][1]/child::div[2]"
    button_language = "//*[@ class = 'MuiList-root MuiList-padding'][2]/child::div[1]"
    button_sign_out = "//*[@ class = 'MuiList-root MuiList-padding'][2]/child::div[2]"
+   players_url = "https://scouts-test.futbolkolektyw.pl/en/players"
+   add_player_button_xpath = "//*[text () = 'Add player']/ancestor::button"
 
    def title_of_page(self):
-      time.sleep(4)
+      self.wait_for_element_to_be_clickable(self.button_players)
       assert self.get_page_title(self.dashboard_url) == self.expected_title
 
+   def click_on_add_player_button(self):
+      return self.click_on_the_element(self.add_player_button_xpath)
