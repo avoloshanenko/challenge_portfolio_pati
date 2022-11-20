@@ -9,8 +9,7 @@ from utils.settings import DRIVER_PATH, IMPLICITLY_WAIT
 
 
 class TestLoginPage(unittest.TestCase):
-
-
+    sign_in_button_xpath = "//*/button[contains(@ class, 'MuiButton')]"
 
     @classmethod
     def setUp(self):
@@ -27,7 +26,7 @@ class TestLoginPage(unittest.TestCase):
         user_login.title_of_page()
         user_login.type_in_email('user07@getnada.com')
         user_login.type_in_password('Test-1234')
-
+        user_login.wait_for_element_to_be_clickable(self.sign_in_button_xpath)
         user_login.click_on_the_sign_in_button()
 
 
