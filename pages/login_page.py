@@ -5,15 +5,18 @@ class LoginPage(BasePage):
     login_field_xpath = "//*[@id='login']"
     password_field_xpath = "//*[@id='password']"
     sign_in_button_xpath = "//*/button[contains(@ class, 'MuiButton')]"
-    login_url = "https://scouts-test.futbolkolektyw.pl"
+    login_url = "https://scouts.futbolkolektyw.pl/en"
     expected_title = "Scouts panel - sign in"
     add_player_button_xpath = "//*[text () = 'Add player']/ancestor::button"
     scouts_panel_xpath = "//header/div/h6"
-    login_url2 = "https://scouts-test.futbolkolektyw.pl/en/players/add"
+    login_url2 = "https://scouts.futbolkolektyw.pl/en/players/add"
     expected_title2 = "Add player"
     button_sign_out = "//*[@ class = 'MuiList-root MuiList-padding'][2]/child::div[2]"
     button_language = "//*[@ class = 'MuiList-root MuiList-padding'][2]/child::div[1]"
     button_players = "//*[@ class = 'MuiList-root MuiList-padding'][1]/child::div[2]"
+    login_url3 = "https://scouts.futbolkolektyw.pl/en/players"
+    expected_url3 = "https://scouts.futbolkolektyw.pl/en/players"
+
 
     def type_in_email(self, email):
         return self.field_send_keys(self.login_field_xpath, email)
@@ -42,6 +45,9 @@ class LoginPage(BasePage):
 
     def click_on_the_players_button(self):
         return self.click_on_the_element(self.button_players)
+
+    def url_of_page3(self):
+        assert self.get_page_url(self.login_url3) == self.expected_url3
 
 
 

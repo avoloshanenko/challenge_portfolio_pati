@@ -6,7 +6,7 @@ from pages.base_page import BasePage
 
 class Dashboard(BasePage):
    expected_title = "Scouts panel"
-   dashboard_url = "https://scouts-test.futbolkolektyw.pl/"
+   dashboard_url = "https://scouts.futbolkolektyw.pl/en"
    header_xpath = "//header"
    side_navigation = "//*[contains(@class, 'MuiDrawer-root')]"
    section_scouts_panel = "//*[contains(@class, 'MuiGrid-spacing-xs-2')][2]/child::div[1]"
@@ -20,7 +20,7 @@ class Dashboard(BasePage):
    button_players = "//*[@ class = 'MuiList-root MuiList-padding'][1]/child::div[2]"
    button_language = "//*[@ class = 'MuiList-root MuiList-padding'][2]/child::div[1]"
    button_sign_out = "//*[@ class = 'MuiList-root MuiList-padding'][2]/child::div[2]"
-   players_url = "https://scouts-test.futbolkolektyw.pl/en/players"
+   players_url = "https://scouts.futbolkolektyw.pl/en/players"
    add_player_button_xpath = "//*[text () = 'Add player']/ancestor::button"
 
    def title_of_page(self):

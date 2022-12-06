@@ -21,4 +21,3 @@ class MatchForm(BasePage):
     button_matches = "//*[contains(@ class, 'MuiList-root')][2]/child::div[2]"
     button_reports = "//*[contains(@ class, 'MuiList-root')][2]/child::div[3]"
 
-    pass

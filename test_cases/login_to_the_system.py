@@ -16,7 +16,7 @@ class TestLoginPage(unittest.TestCase):
         os.chmod(DRIVER_PATH, 755)
 
         self.driver = webdriver.Chrome(executable_path=DRIVER_PATH)
-        self.driver.get('https://scouts-test.futbolkolektyw.pl/en')
+        self.driver.get('https://scouts.futbolkolektyw.pl/en/')
         self.driver.fullscreen_window()
         self.driver.implicitly_wait(IMPLICITLY_WAIT)
 
@@ -31,7 +31,7 @@ class TestLoginPage(unittest.TestCase):
 
 
         scouts_panel_xpath = "//header/div/h6"
-        scout_panel_text = "Scouts Panel"
+        scout_panel_text = "PANEL SKAUTINGOWY"
         user_login.assert_element_text(self.driver, scouts_panel_xpath, scout_panel_text)
 
 

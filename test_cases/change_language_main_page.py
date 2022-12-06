@@ -8,7 +8,7 @@ from pages.login_page import LoginPage
 from utils.settings import DRIVER_PATH, IMPLICITLY_WAIT
 
 
-class TestLoginPage(unittest.TestCase):
+class TestChangeLanguage(unittest.TestCase):
 
 
 
@@ -17,7 +17,7 @@ class TestLoginPage(unittest.TestCase):
         os.chmod(DRIVER_PATH, 755)
 
         self.driver = webdriver.Chrome(executable_path=DRIVER_PATH)
-        self.driver.get('https://scouts-test.futbolkolektyw.pl/en')
+        self.driver.get('https://scouts.futbolkolektyw.pl/en/')
         self.driver.fullscreen_window()
         self.driver.implicitly_wait(IMPLICITLY_WAIT)
 
@@ -29,9 +29,9 @@ class TestLoginPage(unittest.TestCase):
         user_login.type_in_password('Test-1234')
         user_login.click_on_the_sign_in_button()
         user_login.click_on_the_language_button()
-        time.sleep(5)
+        time.sleep(2)
         user_login.click_on_the_language_button()
-        time.sleep(5)
+        time.sleep(2)
 
     def tearDown(self):
         self.driver.quit()

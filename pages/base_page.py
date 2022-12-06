@@ -22,6 +22,10 @@ class BasePage():
         self.driver.get(url)
         return self.driver.title
 
+    def get_page_url(self, url):
+        self.driver.get(url)
+        return self.driver.current_url
+
 
 
 
